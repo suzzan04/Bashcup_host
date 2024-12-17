@@ -18,7 +18,7 @@ const MobileNavbar: React.FC<MobileNavbarProp> = ({ closeModal, ref }) => {
 
   return (
     <div
-      className="w-full h-screen max-w-[13rem] bg-background fixed left-0 top-0 duration-500 p-4 z-10 sm:hidden"
+      className="w-full h-screen max-w-[13rem] bg-background fixed left-0 top-0 duration-500 p-4 z-50 sm:hidden"
       ref={ref}
     >
       <div className="flex flex-col justify-evenly items-center py-10 gap-16 relative">

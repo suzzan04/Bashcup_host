@@ -25,14 +25,14 @@ const About = () => {
           alt="Coffee beans"
           width={600}
           height={500}
-          className="w-full max-h-[300px] object-contain object-right shadow-sm lg:block hidden absolute top-0 left-0 z-0 rotate-180"
+          className="w-full max-h-[300px] object-contain object-right lg:block hidden absolute top-0 left-0 z-0 rotate-180"
         />
         <Image
           src={"/image/coffee_spill_edit.png"}
           alt="Coffee beans"
           width={600}
           height={500}
-          className="w-full max-h-[300px] object-contain object-right shadow-sm lg:block hidden absolute bottom-0 right-0 z-0"
+          className="w-full max-h-[300px] object-contain object-right lg:block hidden absolute bottom-0 right-0 z-0"
         />
       </div>
     </div>
