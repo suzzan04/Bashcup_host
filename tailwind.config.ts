@@ -58,6 +58,7 @@ export default {
           accent_light: "hsl(var(--brand-accent-light-color))",
           bg: "hsl(var(--brand-bg))",
           text: "hsl(var(--brand-text))",
+          text_secondary: "hsl(var(--brand-text-secondary))",
         },
       },
       borderRadius: {

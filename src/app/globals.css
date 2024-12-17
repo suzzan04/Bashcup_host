@@ -41,6 +41,7 @@ body {
     --brand-accent-light-color: 43 100% 83%;
     --brand-bg: 43 100% 98%;
     --brand-text: 22 49% 8%;
+    --brand-text-secondary: 41 37% 55%;
   }
   .dark {
     --background: 0 0% 3.9%;
