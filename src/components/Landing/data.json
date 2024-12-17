@@ -1,0 +1,84 @@
+{
+  "specials": [
+    {
+      "id": "1",
+      "name": "Espresso",
+      "price": 250,
+      "description": "A strong and bold shot of pure coffee, rich in flavor and aroma.",
+      "image": "/image/items/drink1.jpg",
+      "category": ""
+    },
+    {
+      "id": "2",
+      "name": "Cappuccino",
+      "price": 300,
+      "description": "A classic blend of espresso, steamed milk, and frothy milk foam.",
+      "image": "/image/items/drink2.jpg",
+      "category": ""
+    },
+    {
+      "id": "3",
+      "name": "Latte",
+      "price": 350,
+      "description": "A smooth coffee with a generous amount of steamed milk and a light foam.",
+      "image": "/image/items/drink3.jpg",
+      "category": ""
+    },
+    {
+      "id": "4",
+      "name": "Mocha",
+      "price": 400,
+      "description": "A sweet and creamy mix of espresso, chocolate syrup, and steamed milk.",
+      "image": "/image/items/drink4.jpg",
+      "category": ""
+    },
+    {
+      "id": "5",
+      "name": "Americano",
+      "price": 275,
+      "description": "A mellow and smooth coffee made by diluting espresso with hot water.",
+      "image": "/image/items/drink5.jpg",
+      "category": ""
+    },
+    {
+      "id": "6",
+      "name": "Flat White",
+      "price": 375,
+      "description": "A velvety combination of espresso and micro-foamed milk, rich and smooth.",
+      "image": "/image/items/drink6.jpg",
+      "category": ""
+    },
+    {
+      "id": "7",
+      "name": "Macchiato",
+      "price": 325,
+      "description": "An espresso 'stained' with a small amount of frothy steamed milk.",
+      "image": "/image/items/drink7.jpg",
+      "category": ""
+    },
+    {
+      "id": "8",
+      "name": "Affogato",
+      "price": 450,
+      "description": "A delightful dessert coffee featuring espresso poured over vanilla ice cream.",
+      "image": "/image/items/drink8.jpg",
+      "category": ""
+    },
+    {
+      "id": "9",
+      "name": "Irish Coffee",
+      "price": 550,
+      "description": "A warm blend of coffee, Irish whiskey, sugar, and a layer of cream.",
+      "image": "/image/items/drink9.jpg",
+      "category": ""
+    },
+    {
+      "id": "10",
+      "name": "Cold Brew",
+      "price": 375,
+      "description": "A refreshing, smooth coffee brewed slowly with cold water over 12 hours.",
+      "image": "/image/items/drink10.jpg",
+      "category": ""
+    }
+  ]
+}
