@@ -1,0 +1,24 @@
+{
+  "navbarData": [
+    {
+      "name": "home",
+      "path": "/"
+    },
+    {
+      "name": "about",
+      "path": "/about"
+    },
+    {
+      "name": "menu",
+      "path": "/menu"
+    },
+    {
+      "name": "handicraft",
+      "path": "/handicraft"
+    },
+    {
+      "name": "feedback",
+      "path": "/feedback"
+    }
+  ]
+}
