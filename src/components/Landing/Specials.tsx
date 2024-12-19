@@ -15,7 +15,7 @@ const Specials = () => {
   const specialData: Item[] = specials;
   return (
     <div className="w-full h-full flex justify-center items-center ">
-      <div className="w-full h-full max-w-[1800px] bg-background px-8 py-10 flex flex-col gap-14">
+      <div className="w-full h-full max-w-[1800px] bg-background px-8 py-16 flex flex-col gap-14">
         <h3 className="text-xl text-center font-semibold tracking-wider ">
           OUR SPECIAL COFFEE
         </h3>
