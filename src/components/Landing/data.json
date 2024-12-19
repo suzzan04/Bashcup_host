@@ -85,22 +85,22 @@
     {
       "id": "2312421",
       "name": "Coffee",
-      "image": "/image/category/coffee.png"
+      "image": "/image/category/coffee.jpg"
     },
     {
       "id": "234147421",
       "name": "Pastry",
-      "image": "/image/category/pastries.png"
+      "image": "/image/category/pastries.jpg"
     },
     {
       "id": "907893",
       "name": "Drinks",
-      "image": "/image/category/drink.png"
+      "image": "/image/category/drinks.jpg"
     },
     {
       "id": "2341498",
       "name": "Tea",
-      "image": "/image/category/tea.png"
+      "image": "/image/category/tea.jpg"
     }
   ]
 }
