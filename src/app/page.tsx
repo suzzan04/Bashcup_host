@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/components/Footer/Footer";
 import About from "@/components/Landing/About";
 import Banners from "@/components/Landing/Banners";
 import Category from "@/components/Landing/Category";
@@ -17,6 +18,7 @@ export default function Home() {
       <Category />
       <Menu />
       <Customer />
+      <Footer />
     </div>
   );
 }

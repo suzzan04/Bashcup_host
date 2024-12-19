@@ -59,6 +59,7 @@ export default {
           bg: "hsl(var(--brand-bg))",
           text: "hsl(var(--brand-text))",
           text_secondary: "hsl(var(--brand-text-secondary))",
+          navbar: "hsl(var(--brand-navbar-footer))",
         },
       },
       borderRadius: {
