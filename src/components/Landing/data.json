@@ -80,5 +80,27 @@
       "image": "/image/items/drink10.jpg",
       "category": ""
     }
+  ],
+  "category": [
+    {
+      "id": "2312421",
+      "name": "Coffee",
+      "image": "/image/category/coffee.png"
+    },
+    {
+      "id": "234147421",
+      "name": "Pastry",
+      "image": "/image/category/pastries.png"
+    },
+    {
+      "id": "907893",
+      "name": "Drinks",
+      "image": "/image/category/drink.png"
+    },
+    {
+      "id": "2341498",
+      "name": "Tea",
+      "image": "/image/category/tea.png"
+    }
   ]
 }
