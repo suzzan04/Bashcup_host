@@ -21,8 +21,8 @@ const MenuCard: React.FC<Item> = ({ image, name, description, price }) => {
     setQuantity((prev) => --prev);
   };
   return (
-    <div className="w-full h-full flex flex-col border border-brand-accent rounded-lg max-w-[350px] overflow-hidden flex-grow">
-      <div className=" h-auto w-full overflow-hidden max-h-[250px]">
+    <div className="w-full h-full flex flex-col border border-brand-accent rounded-lg max-w-[350px] overflow-hidden flex-grow shadow-sm">
+      <div className=" h-auto w-full overflow-hidden max-h-[200px]">
         <AspectRatio ratio={4 / 3}>
           <Image
             src={image}
