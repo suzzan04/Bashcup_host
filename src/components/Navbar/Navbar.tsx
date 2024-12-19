@@ -58,7 +58,7 @@ const Navbar = () => {
     <nav className="w-full h-full">
       <TopNavbar />
       <div
-        className={`w-full h-full bg-brand-accent_light p-5 duration-150 ${
+        className={`w-full h-full bg-brand-navbar p-5 duration-150 ${
           isScrolled ? " top-0 fixed" : " static"
         }`}
       >
