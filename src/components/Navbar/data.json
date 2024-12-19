@@ -5,12 +5,12 @@
       "path": "/"
     },
     {
-      "name": "about",
-      "path": "/about"
-    },
-    {
       "name": "menu",
       "path": "/menu"
+    },
+    {
+      "name": "cart",
+      "path": "/cart"
     },
     {
       "name": "handicraft",

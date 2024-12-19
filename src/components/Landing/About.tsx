@@ -6,7 +6,7 @@ const About = () => {
   return (
     <div className="w-full h-full flex justify-center items-center ">
       <div className="w-full h-full max-w-[1800px] flex justify-center items-center relative">
-        <div className="flex flex-col gap-3 max-w-[700px] px-10 py-8 h-[300px] z-10 justify-center w-full">
+        <div className="flex flex-col gap-3 max-w-[700px] px-10 py-8 h-[300px] z-10 justify-center w-full bg-brand-bg">
           <h3 className="text-2xl font-bold tracking-wider text-brand-accent_dark">
             Check out our best coffee beans.
           </h3>
@@ -25,14 +25,14 @@ const About = () => {
           alt="Coffee beans"
           width={600}
           height={500}
-          className="w-full max-h-[300px] object-contain object-right lg:block hidden absolute top-0 left-0 z-0 rotate-180"
+          className="w-full max-h-[300px] object-contain object-right lg:block hidden absolute top-0 left-0 z-0 "
         />
         <Image
-          src={"/image/coffee_spill_edit.png"}
+          src={"/image/coffee7.png"}
           alt="Coffee beans"
           width={600}
           height={500}
-          className="w-full max-h-[300px] object-contain object-right lg:block hidden absolute bottom-0 right-0 z-0"
+          className="w-full max-h-[300px] object-contain object-left lg:block hidden absolute  top-0  z-0 select-none "
         />
       </div>
     </div>
