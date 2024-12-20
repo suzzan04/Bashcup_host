@@ -81,7 +81,7 @@ const Specials = () => {
           </button>
           <button
             type="button"
-            className="absolute top-1/2 right-6 custom-prev bg-brand-accent_light hover:bg-brand-accent_dark text-brand-text hover:text-background duration-100 ease-in-out cursor-pointer z-10 p-2 rounded-full  transform -translate-y-1/2 flex justify-center items-center"
+            className="absolute top-1/2 right-6 custom-next bg-brand-accent_light hover:bg-brand-accent_dark text-brand-text hover:text-background duration-100 ease-in-out cursor-pointer z-10 p-2 rounded-full  transform -translate-y-1/2 flex justify-center items-center"
             aria-label="Next Slide"
           >
             <ChevronRight />
