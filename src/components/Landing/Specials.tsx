@@ -3,14 +3,19 @@ import React from "react";
 import ItemCard from "../Common/Card/ItemCard";
 import { specials } from "./data.json";
 import { Item } from "@/@types/Item";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from "@/components/ui/carousel";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
+import { ChevronLeft, ChevronRight } from "lucide-react";
 const Specials = () => {
   const specialData: Item[] = specials;
   return (
@@ -19,35 +24,68 @@ const Specials = () => {
         <h3 className="text-xl text-center font-semibold tracking-wider ">
           OUR SPECIAL COFFEE
         </h3>
-        <div className="flex gap-4 items-center w-full justify-center">
-          <Carousel
-            orientation="horizontal"
-            opts={{
-              loop: true,
-              align: "center",
+        <div className="flex gap-4 items-center w-full justify-center relative">
+          <Swiper
+            loop
+            modules={[Navigation]}
+            breakpoints={{
+              320: {
+                slidesPerView: 1,
+                centeredSlides: true,
+                spaceBetween: 10,
+              },
+              768: {
+                slidesPerView: 2,
+                centeredSlides: false,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                centeredSlides: false,
+                spaceBetween: 30,
+              },
+              1440: {
+                slidesPerView: 4,
+                centeredSlides: false,
+                spaceBetween: 40,
+              },
+            }}
+            spaceBetween={30}
+            draggable={true}
+            centeredSlides={true}
+            navigation={{
+              prevEl: ".custom-prev",
+              nextEl: ".custom-next",
             }}
           >
-            <CarouselContent>
-              {specialData.slice(1, 5).map((data) => (
-                <CarouselItem
+            {specialData.map((data) => (
+              <SwiperSlide key={data.id} className="!flex justify-center">
+                <ItemCard
+                  id={data.id}
+                  description={data.description}
+                  image={data.image}
+                  name={data.name}
+                  price={data.price}
                   key={data.id}
-                  className="basis-1/2 md:basis-1/3 md:pl-4 pl-2"
-                >
-                  <ItemCard
-                    id={data.id}
-                    description={data.description}
-                    image={data.image}
-                    name={data.name}
-                    price={data.price}
-                    key={data.id}
-                    category={data.category}
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
+                  category={data.category}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <button
+            type="button"
+            className="absolute top-1/2 left-4 custom-prev bg-brand-accent_light hover:bg-brand-accent_dark text-brand-text hover:text-background duration-100 ease-in-out cursor-pointer z-10 p-2 rounded-full  transform -translate-y-1/2 flex justify-center items-center"
+            aria-label="Previous Slide"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            type="button"
+            className="absolute top-1/2 right-6 custom-prev bg-brand-accent_light hover:bg-brand-accent_dark text-brand-text hover:text-background duration-100 ease-in-out cursor-pointer z-10 p-2 rounded-full  transform -translate-y-1/2 flex justify-center items-center"
+            aria-label="Next Slide"
+          >
+            <ChevronRight />
+          </button>
         </div>
       </div>
     </div>

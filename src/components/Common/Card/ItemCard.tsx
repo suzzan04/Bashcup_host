@@ -21,8 +21,8 @@ const ItemCard: React.FC<Item> = ({ image, name, description, price }) => {
     setQuantity((prev) => --prev);
   };
   return (
-    <div className="w-full h-full flex flex-col bg-brand-bg max-w-[350px]">
-      <div className=" h-auto w-full overflow-hidden max-h-[250px] rounded-lg">
+    <div className="w-full h-full flex flex-col bg-brand-bg max-w-[350px] rounded-lg shadow shadow-brand-accent_light overflow-hidden">
+      <div className=" h-auto w-full overflow-hidden max-h-[250px] rounded-t-lg">
         <AspectRatio ratio={4 / 3}>
           <Image
             src={image}
