@@ -64,8 +64,8 @@ const Page = () => {
   return (
     <>
       <BoilerPlate>
-        <div className="w-full h-full max-w-[1800px] p-5">
-          <div className="flex flex-col w-full gap-8">
+        <div className="w-full h-full flex justify-center items-center">
+          <div className="flex flex-col max-w-[1800px]  w-full gap-8">
             <h1 className="py-8 text-2xl sm:text-3xl text-center">Your Cart</h1>
 
             <div className="flex flex-col justify-center w-full gap-5">
