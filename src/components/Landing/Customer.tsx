@@ -11,7 +11,7 @@ const Customer = () => {
             OUR HAPPY CUSTOMER
           </h4>
         </div>
-        <div className="flex gap-6 justify-between w-full">
+        <div className="flex gap-6 justify-center w-full flex-wrap ">
           <FeedbackCard />
           <FeedbackCard />
           <FeedbackCard />
