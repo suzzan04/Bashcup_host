@@ -1,15 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay } from "swiper/modules";
 type BannerProps = {
   name: string;
   src: string;
@@ -31,41 +29,33 @@ const Banners = () => {
     },
   ];
   return (
-    <div className="w-full h-full max-h-[500px] overflow-hidden relative">
-      <Carousel
-        orientation="horizontal"
-        opts={{
-          loop: true,
-          align: "start",
+    <div className="w-full h-full max-h-[500px] overflow-hidden relative cursor-grab active:cursor-grabbing">
+      <Swiper
+        modules={[Autoplay]}
+        slidesPerView={1}
+        draggable={true}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
         }}
-        plugins={[
-          Autoplay({
-            delay: 5000,
-            stopOnInteraction: false,
-            stopOnMouseEnter: true,
-          }),
-        ]}
+        loop
       >
-        <CarouselContent>
-          {bannerImages.map((data, index) => (
-            <CarouselItem key={index}>
-              <AspectRatio ratio={16 / 9}>
-                <Image
-                  src={data.src}
-                  alt={data.name}
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  fill
-                  className="w-full h-full object-cover object-center max-h-[500px]"
-                />
-              </AspectRatio>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
-      </Carousel>
+        {bannerImages.map((data, index) => (
+          <SwiperSlide key={index}>
+            <AspectRatio ratio={16 / 9}>
+              <Image
+                src={data.src}
+                alt={data.name}
+                width={0}
+                height={0}
+                sizes="100vw"
+                fill
+                className="w-full h-full object-cover object-center max-h-[500px]"
+              />
+            </AspectRatio>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
