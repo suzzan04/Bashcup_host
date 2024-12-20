@@ -72,7 +72,7 @@ const Navbar = () => {
                   : "font-medium"
               }`}
             >
-              <Link href={data.path} className={`text-xl tracking-wide `}>
+              <Link href={data.path} className={`text-lg tracking-wider `}>
                 {data.name[0].toUpperCase() + data.name.slice(1).toLowerCase()}
               </Link>
               <span className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-accent_dark scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
