@@ -12,7 +12,7 @@ const Menu = () => {
         <h3 className="text-xl text-center font-semibold tracking-wider px-3 w-full py-6 ">
           COFFEE
         </h3>
-        <div className="w-full justify-center items-center">
+        <div className="w-full flex justify-center items-center">
           <div className="max-w-[1500px] w-full grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center">
             {menuData.map((data, index) => (
               <MenuCard
