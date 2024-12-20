@@ -4,6 +4,7 @@ import About from "@/components/Landing/About";
 import Banners from "@/components/Landing/Banners";
 import Category from "@/components/Landing/Category";
 import Customer from "@/components/Landing/Customer";
+import LatestHandiCraft from "@/components/Landing/LatestHandicraft";
 import Menu from "@/components/Landing/Menu";
 import Specials from "@/components/Landing/Specials";
 import Navbar from "@/components/Navbar/Navbar";
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       <Banners />
       <Specials />
+      <LatestHandiCraft />
       <About />
       <Category />
       <Menu />

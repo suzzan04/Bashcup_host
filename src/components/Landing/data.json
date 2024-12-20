@@ -102,5 +102,87 @@
       "name": "Tea",
       "image": "/image/category/tea.jpg"
     }
+  ],
+  "handicraft": [
+    {
+      "id": "1",
+      "name": "Handwoven Basket",
+      "image": "/image/handicraft/painting1.jpg",
+      "price": 299,
+      "description": "A beautifully handwoven basket made from natural fibers, perfect for storage or decoration.",
+      "category": ""
+    },
+    {
+      "id": "2",
+      "name": "Clay Pottery Vase",
+      "image": "/image/handicraft/painting2.jpg",
+      "price": 345,
+      "description": "A stunning clay pottery vase, ideal for adding a rustic charm to your living space.",
+      "category": ""
+    },
+    {
+      "id": "3",
+      "name": "Wooden Carved Elephant",
+      "image": "/image/handicraft/bracelet1.jpg",
+      "price": 150,
+      "description": "An intricately carved wooden elephant, symbolizing strength and wisdom.",
+      "category": ""
+    },
+    {
+      "id": "4",
+      "name": "Beaded Jewelry Set",
+      "image": "/image/handicraft/bracelet2.jpg",
+      "price": 450,
+      "description": "A vibrant beaded jewelry set, handmade with colorful glass beads.",
+      "category": ""
+    },
+    {
+      "id": "5",
+      "name": "Handpainted Ceramic Plate",
+      "image": "/image/handicraft/necklace1.jpg",
+      "price": 299,
+      "description": "A decorative ceramic plate with handpainted floral patterns, great for wall display.",
+      "category": ""
+    },
+    {
+      "id": "6",
+      "name": "Bamboo Wind Chimes",
+      "image": "/image/handicraft/necklace2.jpg",
+      "price": 187,
+      "description": "A soothing bamboo wind chime, perfect for creating a calming atmosphere in your garden.",
+      "category": ""
+    },
+    {
+      "id": "7",
+      "name": "Handknit Wool Scarf",
+      "image": "/image/handicraft/item1.jpg",
+      "price": 280,
+      "description": "A cozy and stylish wool scarf, handknit with intricate patterns.",
+      "category": ""
+    },
+    {
+      "id": "8",
+      "name": "Macrame Wall Hanging",
+      "image": "/image/handicraft/item2.jpg",
+      "price": 400,
+      "description": "A modern macrame wall hanging, adding a boho-chic vibe to your home.",
+      "category": ""
+    },
+    {
+      "id": "9",
+      "name": "Handcrafted Wooden Box",
+      "image": "/image/handicraft/item3.jpg",
+      "price": 225,
+      "description": "A handcrafted wooden box, perfect for storing jewelry or small treasures.",
+      "category": ""
+    },
+    {
+      "id": "10",
+      "name": "Embroidered Cushion Cover",
+      "image": "/image/handicraft/item4.jpg",
+      "price": 300,
+      "description": "A vibrant embroidered cushion cover, featuring traditional patterns.",
+      "category": ""
+    }
   ]
 }
