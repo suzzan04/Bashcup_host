@@ -1,58 +1,82 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { CartItem } from "@/components/Common/Card/CartCard";
 import BoilerPlate from "../BoilerPlate";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
+import {
+  removeProductFromCart,
+  updateProductQuantity,
+} from "@/redux/features/cart/cart";
 
 const Page = () => {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Chicken Burger",
-      description: "Chicken Burger with extra fries",
-      price: 210,
-      quantity: 1,
-      image: "/image/items/drink1.jpg",
-    },
-    {
-      id: 2,
-      name: "Chicken Pizza",
-      description: "Large chicken pizza with extra cheese",
-      price: 450,
-      quantity: 2,
-      image: "/image/items/drink2.jpg",
-    },
-    {
-      id: 3,
-      name: "Chicken Pizza",
-      description: "Large chicken pizza with extra cheese",
-      price: 450,
-      quantity: 2,
-      image: "/image/handicraft/item1.jpg",
-    },
-    {
-      id: 4,
-      name: "Chicken Burger",
-      description: "Chicken Burger with extra fries",
-      price: 210,
-      quantity: 1,
-      image: "/image/handicraft/item2.jpg",
-    },
-  ]);
+  // const [cartItems, setCartItems] = useState([
+  //   {
+  //     id: 1,
+  //     name: "Chicken Burger",
+  //     description: "Chicken Burger with extra fries",
+  //     price: 210,
+  //     quantity: 1,
+  //     image: "/image/items/drink1.jpg",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Chicken Pizza",
+  //     description: "Large chicken pizza with extra cheese",
+  //     price: 450,
+  //     quantity: 2,
+  //     image: "/image/items/drink2.jpg",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Chicken Pizza",
+  //     description: "Large chicken pizza with extra cheese",
+  //     price: 450,
+  //     quantity: 2,
+  //     image: "/image/handicraft/item1.jpg",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Chicken Burger",
+  //     description: "Chicken Burger with extra fries",
+  //     price: 210,
+  //     quantity: 1,
+  //     image: "/image/handicraft/item2.jpg",
+  //   },
+  // ]);
 
-  const handleDeleteItem = (itemId: number) => {
-    setCartItems(cartItems.filter((item) => item.id !== itemId));
-  };
+  // const handleDeleteItem = (itemId: number) => {
+  //   setCartItems(cartItems.filter((item) => item.id !== itemId));
+  // };
 
-  const handleQuantityChange = (itemId: number, change: number) => {
-    setCartItems(
-      cartItems.map((item) => {
-        if (item.id === itemId) {
-          const newQuantity = Math.max(1, item.quantity + change);
-          return { ...item, quantity: newQuantity };
-        }
-        return item;
+  const dispatch = useAppDispatch();
+  const cartItems = useAppSelector((state) => state.cart.items);
+
+  const increaseQuantity = (id: string, quantity: number) => {
+    dispatch(
+      updateProductQuantity({
+        id: id,
+        quantity: quantity + 1,
       })
     );
+  };
+
+  const decreaseQuantity = (id: string, quantity: number) => {
+    if (quantity <= 1) {
+      removeProductFromCart({
+        id: id,
+      });
+      return;
+    }
+    dispatch(
+      updateProductQuantity({
+        id: id,
+        quantity: quantity - 1,
+      })
+    );
+  };
+
+  const deleteItem = (id: string) => {
+    dispatch(removeProductFromCart({ id: id }));
   };
 
   const subtotal = cartItems.reduce(
@@ -77,10 +101,11 @@ const Page = () => {
               </div>
               {cartItems.map((item) => (
                 <CartItem
-                  key={item.id}
+                  key={item._id}
                   item={item}
-                  onDelete={handleDeleteItem}
-                  onQuantityChange={handleQuantityChange}
+                  onDelete={deleteItem}
+                  onDecreaseQuantity={decreaseQuantity}
+                  onIncreaseQuantity={increaseQuantity}
                 />
               ))}
             </div>

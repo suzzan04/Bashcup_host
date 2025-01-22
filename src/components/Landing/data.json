@@ -21,7 +21,7 @@
       "name": "Latte",
       "price": 350,
       "description": "A smooth coffee with a generous amount of steamed milk and a light foam.",
-      "image": "/image/items/drink3.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292603/drink7_ie7ebe.jpg",
       "category": ""
     },
     {
@@ -29,15 +29,15 @@
       "name": "Mocha",
       "price": 400,
       "description": "A sweet and creamy mix of espresso, chocolate syrup, and steamed milk.",
-      "image": "/image/items/drink4.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292603/drink10_lnkeqi.jpg",
       "category": ""
     },
     {
       "id": "5",
-      "name": "Americano",
+      "name": "Drink 1",
       "price": 275,
       "description": "A mellow and smooth coffee made by diluting espresso with hot water.",
-      "image": "/image/items/drink5.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292605/drink1_akly7a.jpg",
       "category": ""
     },
     {
@@ -45,7 +45,7 @@
       "name": "Flat White",
       "price": 375,
       "description": "A velvety combination of espresso and micro-foamed milk, rich and smooth.",
-      "image": "/image/items/drink6.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292605/drink4_tlh4mp.jpg",
       "category": ""
     },
     {
@@ -53,7 +53,7 @@
       "name": "Macchiato",
       "price": 325,
       "description": "An espresso 'stained' with a small amount of frothy steamed milk.",
-      "image": "/image/items/drink7.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292605/drink3_nhs9bh.jpg",
       "category": ""
     },
     {
@@ -61,7 +61,7 @@
       "name": "Affogato",
       "price": 450,
       "description": "A delightful dessert coffee featuring espresso poured over vanilla ice cream.",
-      "image": "/image/items/drink8.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292604/drink6_rk1gxa.jpg",
       "category": ""
     },
     {
@@ -69,7 +69,7 @@
       "name": "Irish Coffee",
       "price": 550,
       "description": "A warm blend of coffee, Irish whiskey, sugar, and a layer of cream.",
-      "image": "/image/items/drink9.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292604/drink2_z9gbh9.jpg",
       "category": ""
     },
     {
@@ -77,7 +77,7 @@
       "name": "Cold Brew",
       "price": 375,
       "description": "A refreshing, smooth coffee brewed slowly with cold water over 12 hours.",
-      "image": "/image/items/drink10.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737292603/drink5_uglfro.jpg",
       "category": ""
     }
   ],
@@ -115,7 +115,7 @@
     {
       "id": "2",
       "name": "Clay Pottery Vase",
-      "image": "/image/handicraft/painting2.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472318/painting1_fannbg.jpg",
       "price": 345,
       "description": "A stunning clay pottery vase, ideal for adding a rustic charm to your living space.",
       "category": ""
@@ -123,7 +123,7 @@
     {
       "id": "3",
       "name": "Wooden Carved Elephant",
-      "image": "/image/handicraft/bracelet1.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472319/item4_ewygow.jpg",
       "price": 150,
       "description": "An intricately carved wooden elephant, symbolizing strength and wisdom.",
       "category": ""
@@ -131,7 +131,7 @@
     {
       "id": "4",
       "name": "Beaded Jewelry Set",
-      "image": "/image/handicraft/bracelet2.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472319/item3_n40h9h.jpg",
       "price": 450,
       "description": "A vibrant beaded jewelry set, handmade with colorful glass beads.",
       "category": ""
@@ -139,7 +139,7 @@
     {
       "id": "5",
       "name": "Handpainted Ceramic Plate",
-      "image": "/image/handicraft/necklace1.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472319/item2_o8uro9.jpg",
       "price": 299,
       "description": "A decorative ceramic plate with handpainted floral patterns, great for wall display.",
       "category": ""
@@ -147,7 +147,7 @@
     {
       "id": "6",
       "name": "Bamboo Wind Chimes",
-      "image": "/image/handicraft/necklace2.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472319/item1_jcxghn.jpg",
       "price": 187,
       "description": "A soothing bamboo wind chime, perfect for creating a calming atmosphere in your garden.",
       "category": ""
@@ -155,7 +155,7 @@
     {
       "id": "7",
       "name": "Handknit Wool Scarf",
-      "image": "/image/handicraft/item1.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472318/necklace1_drkibc.jpg",
       "price": 280,
       "description": "A cozy and stylish wool scarf, handknit with intricate patterns.",
       "category": ""
@@ -163,7 +163,7 @@
     {
       "id": "8",
       "name": "Macrame Wall Hanging",
-      "image": "/image/handicraft/item2.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472318/bracelet2_eq4iii.jpg",
       "price": 400,
       "description": "A modern macrame wall hanging, adding a boho-chic vibe to your home.",
       "category": ""
@@ -171,7 +171,7 @@
     {
       "id": "9",
       "name": "Handcrafted Wooden Box",
-      "image": "/image/handicraft/item3.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472317/necklace2_ve0bbq.jpg",
       "price": 225,
       "description": "A handcrafted wooden box, perfect for storing jewelry or small treasures.",
       "category": ""
@@ -179,7 +179,7 @@
     {
       "id": "10",
       "name": "Embroidered Cushion Cover",
-      "image": "/image/handicraft/item4.jpg",
+      "image": "https://res.cloudinary.com/duvhktdbf/image/upload/v1737472317/bracelet1_pm7mea.jpg",
       "price": 300,
       "description": "A vibrant embroidered cushion cover, featuring traditional patterns.",
       "category": ""

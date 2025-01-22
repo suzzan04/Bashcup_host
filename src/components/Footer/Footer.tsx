@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import CircleIcon from "../Common/CircleIcon";
@@ -124,11 +123,11 @@ const Footer = () => {
             </p>
           </div>
           <div className="flex gap-1 items-center">
-            <Input
+            {/* <Input
               type="text"
               className="border border-brand-secondary"
-              placeholder="ex: xyz@gmail.com"
-            />
+              placeholder="eg: xyz@gmail.com"
+            /> */}
             <Button
               className="bg-brand-secondary hover:bg-brand-accent_dark"
               type="submit"

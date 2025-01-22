@@ -12,7 +12,8 @@ export async function dbConnect(): Promise<void> {
     return;
   }
   try {
-    const db = await mongoose.connect(process.env.DB_URI || "", {
+    const DB_URI = process.env.NEXT_DB_URI;
+    const db = await mongoose.connect(DB_URI || "", {
       dbName: "bash_cup",
     });
     connection.isConnected = db.connections[0].readyState;

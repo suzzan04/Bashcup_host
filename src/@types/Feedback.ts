@@ -7,5 +7,5 @@ export interface Feedback {
 }
 
 export interface FeedbackDetail extends Feedback {
-  id: string;
+  _id: string;
 }

@@ -1,25 +1,81 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Item } from "@/@types/Item";
+import { ItemDetail } from "@/@types/Item";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
+import {
+  addProductToCart,
+  removeProductFromCart,
+  updateProductQuantity,
+} from "@/redux/features/cart/cart";
 
-const ItemCard: React.FC<Item> = ({ image, name, description, price }) => {
+const ItemCard: React.FC<ItemDetail> = ({
+  _id,
+  image,
+  name,
+  description,
+  price,
+  category,
+  isSpecial,
+}) => {
   const [isActiveCart, setIsActiveCart] = useState<boolean>(false);
-  const [quantity, setQuantity] = useState<number>(1);
+  const cartItems = useAppSelector((state) => state.cart.items);
+  const cartProduct = cartItems.find((item) => item._id === _id);
+  const dispatch = useAppDispatch();
 
   const increaseQuantity = () => {
-    setQuantity((prev) => ++prev);
+    if (cartProduct) {
+      dispatch(
+        updateProductQuantity({
+          id: _id,
+          quantity: cartProduct.quantity + 1,
+        })
+      );
+    }
   };
 
   const decreaseQuantity = () => {
-    if (quantity <= 1) {
+    if (!cartProduct) return;
+    if (cartProduct.quantity <= 1) {
+      removeProductFromCart({
+        id: _id,
+      });
       setIsActiveCart(false);
       return;
     }
-    setQuantity((prev) => --prev);
+    dispatch(
+      updateProductQuantity({
+        id: _id,
+        quantity: cartProduct.quantity - 1,
+      })
+    );
   };
+
+  const handleCart = () => {
+    setIsActiveCart(!isActiveCart);
+    dispatch(
+      addProductToCart({
+        item: {
+          _id,
+          image,
+          name,
+          description,
+          price,
+          category,
+          isSpecial,
+          quantity: 1,
+        },
+      })
+    );
+  };
+
+  useEffect(() => {
+    if (cartProduct) {
+      setIsActiveCart(true);
+    }
+  }, [cartProduct]);
   return (
     <div className="w-full h-full flex flex-col bg-brand-bg max-w-[350px] rounded-lg shadow shadow-brand-accent_light overflow-hidden">
       <div className=" h-auto w-full overflow-hidden max-h-[250px] rounded-t-lg">
@@ -48,7 +104,7 @@ const ItemCard: React.FC<Item> = ({ image, name, description, price }) => {
               >
                 -
               </Button>
-              <p className="text-lg">{quantity}</p>
+              <p className="text-lg">{cartProduct?.quantity}</p>
               <Button
                 className="bg-brand-secondary hover:bg-brand-accent_dark size-8 flex items-center justify-center"
                 onClick={increaseQuantity}
@@ -60,7 +116,7 @@ const ItemCard: React.FC<Item> = ({ image, name, description, price }) => {
             <Button
               className="bg-brand-secondary hover:bg-brand-accent_dark"
               onClick={() => {
-                setIsActiveCart(true);
+                handleCart();
               }}
             >
               Add to Cart

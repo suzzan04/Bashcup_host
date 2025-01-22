@@ -25,7 +25,7 @@ const MenuItemSchema = new Schema<Item>({
   },
   isSpecial: {
     type: Boolean,
-    required: [true, "Please specify the type of the item."],
+    default: false,
   },
 });
 

@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 import { Item } from "@/@types/Item";
 
-const HandicraftSchem = new Schema<Item>({
+const HandicraftSchema = new Schema<Item>({
   name: {
     type: String,
     required: [true, "Item name is required"],
@@ -31,6 +31,6 @@ const HandicraftSchem = new Schema<Item>({
 
 const HandicraftModel =
   (mongoose.models.Handicraft as mongoose.Model<Item>) ||
-  mongoose.model<Item>("Handicraft", HandicraftSchem);
+  mongoose.model<Item>("Handicraft", HandicraftSchema);
 
 export default HandicraftModel;

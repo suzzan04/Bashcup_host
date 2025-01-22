@@ -1,21 +1,24 @@
+import { CartItem as Cart } from "@/@types/Item";
 import Image from "next/image";
 
-type Cart = {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  quantity: number;
-  image: string;
-};
+// type Cart = {
+//   id: string;
+//   name: string;
+//   description: string;
+//   price: number;
+//   quantity: number;
+//   image: string;
+// };
 export const CartItem = ({
   item,
   onDelete,
-  onQuantityChange,
+  onDecreaseQuantity,
+  onIncreaseQuantity,
 }: {
   item: Cart;
-  onDelete: (id: number) => void;
-  onQuantityChange: (id: number, change: number) => void;
+  onDelete: (id: string) => void;
+  onIncreaseQuantity: (id: string, quantity: number) => void;
+  onDecreaseQuantity: (id: string, quantity: number) => void;
 }) => {
   return (
     <div className="grid w-full grid-cols-8 px-3 py-4 space-x-10 border-b border-gray-200 ">
@@ -42,15 +45,15 @@ export const CartItem = ({
 
       <div className="flex items-center col-span-2 space-x-4 select-none md:col-span-1 flex-nowrap">
         <button
-          className="text-gray-500"
-          onClick={() => onQuantityChange(item.id, -1)}
+          className="text-gray-500 p-2 cursor-pointer"
+          onClick={() => onDecreaseQuantity(item._id, item.quantity)}
         >
           -
         </button>
         <span className="">{item.quantity}</span>
         <button
-          onClick={() => onQuantityChange(item.id, 1)}
-          className="text-gray-500"
+          onClick={() => onIncreaseQuantity(item._id, item.quantity)}
+          className="text-gray-500 p-2 cursor-pointer"
         >
           +
         </button>
@@ -64,7 +67,7 @@ export const CartItem = ({
 
       <div className="flex items-center col-span-1 select-none">
         <button
-          onClick={() => onDelete(item.id)}
+          onClick={() => onDelete(item._id)}
           className="text-red-600 hover:text-red-800 scale-110"
         >
           X

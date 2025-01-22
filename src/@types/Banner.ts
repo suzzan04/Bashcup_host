@@ -5,5 +5,5 @@ export interface Banner {
 }
 
 export interface BannerDetail extends Banner {
-  id: string;
+  _id: string;
 }

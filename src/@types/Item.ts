@@ -7,10 +7,10 @@ export interface Item {
   isSpecial?: boolean;
 }
 export interface ItemDetail extends Item {
-  id: string;
+  _id: string;
 }
 
-export interface CartItem extends Item {
+export interface CartItem extends ItemDetail {
   quantity: number;
 }
 

@@ -1,16 +1,19 @@
 "use client";
 import React from "react";
 import ItemCard from "../Common/Card/ItemCard";
-import { handicraft } from "./data.json";
-import { Item } from "@/@types/Item";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useAppSelector } from "@/redux/store";
 const LatestHandiCraft = () => {
-  const specialData: Item[] = handicraft;
+  const handicraft = useAppSelector((state) => state.handicraft);
+  const specialData = handicraft.items.filter(
+    (item) => item.isSpecial === true
+  );
+  console.log({ handicraft });
   return (
     <div className="w-full h-full flex justify-center items-center ">
       <div className="w-full h-full max-w-[1800px] bg-background px-8 py-16 flex flex-col gap-14">
@@ -52,15 +55,16 @@ const LatestHandiCraft = () => {
             }}
           >
             {specialData.map((data) => (
-              <SwiperSlide key={data.id} className="!flex justify-center">
+              <SwiperSlide key={data._id} className="!flex justify-center">
                 <ItemCard
-                  id={data.id}
+                  _id={data._id}
                   description={data.description}
                   image={data.image}
                   name={data.name}
                   price={data.price}
-                  key={data.id}
+                  key={data._id}
                   category={data.category}
+                  isSpecial={data.isSpecial}
                 />
               </SwiperSlide>
             ))}
