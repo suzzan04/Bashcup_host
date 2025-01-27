@@ -201,10 +201,10 @@ const Page = () => {
           data={data}
           actions={{
             editFn: (id) => {
-              console.log(id);
+              // console.log(id);
             },
             deleteFn: (id) => {
-              console.log(id);
+              // console.log(id);
             },
           }}
           totalData={5}

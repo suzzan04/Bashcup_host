@@ -18,7 +18,7 @@ const Table: React.FC<TableProps<any>> = ({
   useEffect(() => {
     if (data) {
       setCurrentData(data);
-      console.log(data);
+      // console.log(data);
     }
   }, [data]);
   return (

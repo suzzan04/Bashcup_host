@@ -13,12 +13,12 @@ const LatestHandiCraft = () => {
   const specialData = handicraft.items.filter(
     (item) => item.isSpecial === true
   );
-  console.log({ handicraft });
+  // console.log({ handicraft });
   return (
     <div className="w-full h-full flex justify-center items-center ">
       <div className="w-full h-full max-w-[1800px] bg-background px-8 py-16 flex flex-col gap-14">
         <h3 className="text-xl text-center font-semibold tracking-wider ">
-          OUR LATEST HANDICRAFT
+          MITHO SAMJHANA
         </h3>
         <div className="flex gap-4 items-center w-full justify-center relative">
           <Swiper

@@ -1,13 +1,14 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, ShoppingCartIcon } from "lucide-react";
 import { debounce } from "@/helpers/debouncer";
 import { NavbarData } from "@/@types/Navbar";
 import TopNavbar from "./TopNavbar";
 import { navbarData as data } from "./data.json";
 import MobileNavbar from "./MobileNavbar";
+import { useAppSelector } from "@/redux/store";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -15,6 +16,7 @@ const Navbar = () => {
   const navbarData: NavbarData[] = data;
   const navbarRef = useRef<null | HTMLDivElement>(null);
   const mobileNavbar = useRef<null | HTMLDivElement>(null);
+  const menuData = useAppSelector((state) => state.cart);
 
   // to set navbar on top
   useEffect(() => {
@@ -52,17 +54,20 @@ const Navbar = () => {
     };
     window.addEventListener("mousedown", closeModal);
   }, [isOpen]);
-
   const pathName = usePathname();
+
+  const handleCartIcon = () => {
+    redirect("/cart");
+  };
   return (
-    <nav className="w-full h-full">
+    <nav className="w-full h-full ">
       <TopNavbar />
       <div
-        className={`w-full h-full bg-brand-navbar p-5 duration-150 ${
+        className={`w-full h-full bg-brand-navbar p-5 duration-150 relative ${
           isScrolled ? " top-0 fixed" : " static"
         }`}
       >
-        <div className="hidden sm:flex space-x-10 justify-center items-center text-brand-text">
+        <div className="hidden sm:flex space-x-10 justify-center items-center text-brand-text relative">
           {navbarData.map((data, index) => (
             <div
               key={index}
@@ -80,6 +85,15 @@ const Navbar = () => {
           ))}
         </div>
 
+        <div
+          className="absolute top-5 right-10 sm:hidden cursor-pointer select-none"
+          onClick={handleCartIcon}
+        >
+          <ShoppingCartIcon className="block sm:hidden cursor-pointer size-7 text-brand-accent_dark relative" />
+          <div className="w-5 h-5 rounded-full bg-red-500 top-0 absolute right-[-10]  ">
+            <p className="text-white text-center">{menuData.items.length}</p>
+          </div>
+        </div>
         <Menu
           className="block sm:hidden cursor-pointer size-7 text-brand-accent_dark"
           onClick={() => {

@@ -15,10 +15,6 @@
     {
       "name": "handicraft",
       "path": "/handicraft"
-    },
-    {
-      "name": "feedback",
-      "path": "/feedback"
     }
   ]
 }

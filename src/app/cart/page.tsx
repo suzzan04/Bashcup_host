@@ -7,6 +7,8 @@ import {
   removeProductFromCart,
   updateProductQuantity,
 } from "@/redux/features/cart/cart";
+import { EmptyCart } from "@/components/empty/cart/Cart.empty";
+import { isMobile } from "@/utils/checkMobile";
 
 const Page = () => {
   // const [cartItems, setCartItems] = useState([
@@ -79,6 +81,40 @@ const Page = () => {
     dispatch(removeProductFromCart({ id: id }));
   };
 
+  const handleCheckout = () => {
+    try {
+      const phoneNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
+      const messageText = `
+      *Order Request*\n
+        Hello! I'd like to confirm my following order.\n
+       ${cartItems.map((messageItem) => {
+         const message = "*Item*: " + messageItem.name;
+         return message;
+       })}
+        Thank you.
+      `;
+      // Function to check if the device is mobile
+      let whatshappLink = "";
+
+      if (isMobile()) {
+        // Redirect to WhatsApp app on mobile
+        whatshappLink = `whatsapp://send?phone=${phoneNumber}&text=${encodeURIComponent(
+          messageText
+        )}`;
+        window.location.href = whatshappLink;
+      } else {
+        // Redirect to WhatsApp web on desktop
+        whatshappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+          messageText
+        )}`;
+        window.open(whatshappLink, "_blank");
+      }
+
+      // Set the location to the generated WhatsApp link
+    } catch (error) {
+      throw new Error("Error while send message " + error);
+    }
+  };
   const subtotal = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -99,15 +135,24 @@ const Page = () => {
                 <div className="col-span-2 md:col-span-1">Quantity</div>
                 <div className="col-span-2 md:col-span-1">Total</div>
               </div>
-              {cartItems.map((item) => (
-                <CartItem
-                  key={item._id}
-                  item={item}
-                  onDelete={deleteItem}
-                  onDecreaseQuantity={decreaseQuantity}
-                  onIncreaseQuantity={increaseQuantity}
-                />
-              ))}
+
+              {cartItems.length < 1 ? (
+                <>
+                  <EmptyCart />
+                </>
+              ) : (
+                <>
+                  {cartItems.map((item) => (
+                    <CartItem
+                      key={item._id}
+                      item={item}
+                      onDelete={deleteItem}
+                      onDecreaseQuantity={decreaseQuantity}
+                      onIncreaseQuantity={increaseQuantity}
+                    />
+                  ))}
+                </>
+              )}
             </div>
 
             <div className="bg-[#F4F4F4] px-8 py-5 rounded w-full">
@@ -146,7 +191,10 @@ const Page = () => {
                     <span>Rs {total}</span>
                   </div>
 
-                  <button className="w-full flex justify-between px-5 py-2 font-medium text-background bg-brand-accent  rounded-md hover:bg-brand-accent_dark">
+                  <button
+                    className="w-full flex justify-between px-5 py-2 font-medium text-background bg-brand-accent  rounded-md hover:bg-brand-accent_dark"
+                    onClick={handleCheckout}
+                  >
                     Checkout
                     <span>Rs {total}</span>
                   </button>

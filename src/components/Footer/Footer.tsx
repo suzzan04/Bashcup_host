@@ -2,8 +2,8 @@ import React from "react";
 import Image from "next/image";
 import CircleIcon from "../Common/CircleIcon";
 import { Mail, Phone } from "lucide-react";
-import { Input } from "../ui/input";
-import { Button } from "../ui/button";
+// import { Input } from "../ui/input";
+// import { Button } from "../ui/button";
 
 const Footer = () => {
   return (
@@ -116,24 +116,13 @@ const Footer = () => {
         </div>
         <div className="flex flex-col py-4 gap-4 text-brand-text col-span-2 md:col-span-1">
           <div className="flex  flex-col gap-1">
-            <h6 className="font-bold tracking-wider">Subscribe</h6>
-            <p className="text-xs text-brand-accent_dark">
-              Want to know about our latest offers and annoucements? Subscribe
-              us now.
+            <h6 className="font-bold tracking-wider text-2xl mb-3">
+              Thank you!!
+            </h6>
+            <p className="text-lg text-brand-accent_dark">
+              Thank you for visiting us. For more info connect with us at
+              aayush@gmail.com
             </p>
-          </div>
-          <div className="flex gap-1 items-center">
-            {/* <Input
-              type="text"
-              className="border border-brand-secondary"
-              placeholder="eg: xyz@gmail.com"
-            /> */}
-            <Button
-              className="bg-brand-secondary hover:bg-brand-accent_dark"
-              type="submit"
-            >
-              Send
-            </Button>
           </div>
         </div>
       </div>
@@ -151,7 +140,7 @@ export default Footer;
     alt="facebook"
     className="min-w-[20px] max-w-[30px]"
 /> 
-
+ h-screen
 <Image
     src={"/image/icons/whatsapp.png"}
     width={60}
@@ -166,5 +155,27 @@ export default Footer;
     alt="facebook"
     className="min-w-[0px] max-w-[30px]"
 /> 
+
+  <div className="flex flex-col py-4 gap-4 text-brand-text col-span-2 md:col-span-1">
+          <div className="flex  flex-col gap-1">
+            <h6 className="font-bold tracking-wider">Connect</h6>
+            <p className="text-xs text-brand-accent_dark">
+              For more info connect with us at aayush@gmail.com
+            </p>
+          </div>
+          <div className="flex gap-1 items-center">
+            {/* <Input
+              type="text"
+              className="border border-brand-secondary"
+              placeholder="eg: xyz@gmail.com"
+            /> 
+          <Button
+              className="bg-brand-secondary hover:bg-brand-accent_dark"
+              type="submit"
+            >
+              Send
+            </Button> 
+          </div> 
+        </div> 
 
 */

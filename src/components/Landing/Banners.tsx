@@ -8,26 +8,26 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Autoplay } from "swiper/modules";
-type BannerProps = {
-  name: string;
-  src: string;
-};
+import { BannerDetail } from "@/@types/Banner";
 
-const Banners = () => {
-  const bannerImages: BannerProps[] = [
-    {
-      name: "Banner 1",
-      src: "/image/banner/bash_banner.jpg",
-    },
-    {
-      name: "Banner 2",
-      src: "/image/banner/bash_banner-2.jpg",
-    },
-    {
-      name: "Banner 3",
-      src: "/image/banner/bash_coffee_banner.jpg",
-    },
-  ];
+type BannerProps = {
+  banner: BannerDetail[];
+};
+const Banners: React.FC<BannerProps> = ({ banner }) => {
+  // const bannerImages: BannerProps[] = [
+  //   {
+  //     name: "Banner 1",
+  //     src: "/image/banner/bash_banner.jpg",
+  //   },
+  //   {
+  //     name: "Banner 2",
+  //     src: "/image/banner/bash_banner-2.jpg",
+  //   },
+  //   {
+  //     name: "Banner 3",
+  //     src: "/image/banner/bash_coffee_banner.jpg",
+  //   },
+  // ];
   return (
     <div className="w-full h-full max-h-[500px] overflow-hidden relative cursor-grab active:cursor-grabbing">
       <Swiper
@@ -40,11 +40,11 @@ const Banners = () => {
         }}
         loop
       >
-        {bannerImages.map((data, index) => (
+        {banner.map((data, index) => (
           <SwiperSlide key={index}>
             <AspectRatio ratio={16 / 9}>
               <Image
-                src={data.src}
+                src={data.image}
                 alt={data.name}
                 width={0}
                 height={0}
