@@ -3,10 +3,8 @@ import { ApiError } from "@/helpers/ApIError";
 import { ApiResponse } from "@/helpers/ApiResponse";
 import BannerModel from "@/models/Banner.model";
 
-export async function DELETE(
-  _: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: Request) {
+  const { params } = await request.json();
   await dbConnect();
   try {
     const banner = await BannerModel.findByIdAndDelete(params.id);

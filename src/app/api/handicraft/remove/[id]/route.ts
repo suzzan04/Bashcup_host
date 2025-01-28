@@ -3,12 +3,10 @@ import { ApiError } from "@/helpers/ApIError";
 import { ApiResponse } from "@/helpers/ApiResponse";
 import HandicraftModel from "@/models/Handicraft.model";
 
-export async function DELETE(
-  _: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(req: Request) {
   await dbConnect();
   try {
+    const { params } = await req.json();
     const item = await HandicraftModel.findByIdAndDelete(params.id);
     if (!item) {
       throw new ApiError(

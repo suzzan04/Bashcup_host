@@ -3,12 +3,10 @@ import { ApiError } from "@/helpers/ApIError";
 import { ApiResponse } from "@/helpers/ApiResponse";
 import CategoryModel from "@/models/Category.model";
 
-export async function DELETE(
-  _: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(req: Request) {
   await dbConnect();
   try {
+    const { params } = await req.json();
     const category = await CategoryModel.findByIdAndDelete(params.id);
     if (!category) {
       throw new ApiError(

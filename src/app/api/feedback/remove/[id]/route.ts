@@ -3,12 +3,10 @@ import { ApiError } from "@/helpers/ApIError";
 import { ApiResponse } from "@/helpers/ApiResponse";
 import FeedbackModel from "@/models/Feedback.model";
 
-export async function DELETE(
-  _: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(req: Request) {
   await dbConnect();
   try {
+    const { params } = await req.json();
     const feedback = await FeedbackModel.findByIdAndDelete(params.id);
     if (!feedback) {
       throw new ApiError(

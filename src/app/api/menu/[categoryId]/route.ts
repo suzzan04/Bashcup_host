@@ -3,12 +3,10 @@ import { ApiError } from "@/helpers/ApIError";
 import { ApiResponse } from "@/helpers/ApiResponse";
 import MenuItemModel from "@/models/MenuItem.model";
 
-export async function GET(
-  _: Request,
-  { params }: { params: { categoryId: string } }
-) {
+export async function GET(req: Request) {
   await dbConnect();
   try {
+    const { params } = await req.json();
     const items = await MenuItemModel.findById(params.categoryId);
     return Response.json(
       new ApiResponse(
